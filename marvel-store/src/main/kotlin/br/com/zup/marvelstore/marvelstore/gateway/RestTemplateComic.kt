@@ -20,7 +20,8 @@ class RestTemplateComic {
     }
 
     private fun generateHash(): String {
-        val key = timestamp + "c43c18515636b8fd91bcb8749263137f6894ecb15576cb1772688f0b79b587abcb380449"
+        val marveKey = System.getenv("MARVEL_KEY")
+        val key = timestamp + marveKey
         return DigestUtils.md5Hex(key)
     }
 }

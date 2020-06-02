@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
 class ComicService {
 
     var restTemplateComic = RestTemplateComic()
-    var converterComicGatewayToComic= ConverterComicGatewayToComic()
+    var converterComicGatewayToComic = ConverterComicGatewayToComic()
 
     @Autowired
     lateinit var comicRepository: ComicRepository
@@ -29,7 +29,6 @@ class ComicService {
                 comicRepository.save(converterComicGatewayToComic.toComic(comicResult))
             }
         }
-
         return comicResultGateway
     }
 
